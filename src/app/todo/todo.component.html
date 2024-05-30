@@ -1,0 +1,14 @@
+<div>
+  <h1>Todo List</h1>
+  <input [(ngModel)]="newTodo" placeholder="Add new todo" />
+  <button (click)="addTodo()">Add Todo</button>
+  <ul>
+    <li
+      *ngFor="let todo of todos"
+      [style.textDecoration]="todo.completed ? 'line-through' : 'none'"
+    >
+      {{ todo.title }}
+      <button (click)="toggleTodoCompletion(todo)">Toggle</button>
+    </li>
+  </ul>
+</div>
